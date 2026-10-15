@@ -90,6 +90,6 @@ ptc-dummyjson-products/
 
 ## Group members
 
-Individual assignment - <Ezra Jangfai>
+Individual assignment - Ezra Jangfai
 
 
