@@ -49,7 +49,7 @@ ptc-dummyjson-products/
 1. Clone the repository
 
    ```
-   git clone https://github.com/<your-username>/ptc-dummyjson-products.git
+   git clone https://github.com/desailly-ez/ptc-dummyjson-products.git
    cd ptc-dummyjson-products
    ```
 
