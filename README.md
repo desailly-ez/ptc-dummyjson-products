@@ -89,5 +89,5 @@ ptc-dummyjson-products/
 [DummyJSON Products](https://dummyjson.com/products)
 
 ## Group members
-
+Ezra JangfaiEzra j
 Individual assignment - <your name>
