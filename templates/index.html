@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTC Products App</title>
+
+    <!-- url_for builds the path to the CSS file in the static folder -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>PTC Products App</h1>
+
+        <!-- FILTER FORM
+             method="get" puts the input in the URL (/?category=beauty),
+             so Flask can read it with request.args.get("category") -->
+        <form method="get" action="/">
+            <input
+                type="text"
+                name="category"
+                placeholder="Filter by category"
+                value="{{ selected_category }}"
+                list="category-list"
+            >
+
+            <!-- datalist gives suggestions while typing, filled by Jinja2 -->
+            <datalist id="category-list">
+                {% for category in categories %}
+                    <option value="{{ category }}">
+                {% endfor %}
+            </datalist>
+
+            <button type="submit">Filter</button>
+            <a href="/" class="reset">Reset</a>
+        </form>
+
+        <!-- Show how many products are found -->
+        <p class="count">{{ products | length }} products found (sorted by title A-Z)</p>
+
+        <!-- PRODUCTS TABLE -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Brand</th>
+                    <th>Price (USD)</th>
+                    <th>Rating</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Jinja2 loop: one row for every product -->
+                {% for product in products %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.title }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.brand or "N/A" }}</td>
+                    <td>$ {{ "%.2f" | format(product.price) }}</td>
+                    <td>{{ product.rating }}</td>
+                    <td>{{ product.stock }}</td>
+                </tr>
+                {% else %}
+                <!-- Shown when there are no products (no match or API error) -->
+                <tr>
+                    <td colspan="7">No products found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html>
