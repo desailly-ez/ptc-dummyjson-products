@@ -1,6 +1,6 @@
 # PTC Products App
 
-Personal Python 2 (DS304) final assignment for PTC Data Science.
+Personal Python 2 Hertentamen
 
 ## Description
 
