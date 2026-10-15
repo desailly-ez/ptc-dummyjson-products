@@ -1,9 +1,11 @@
 /* style.css - basic styling for the PTC Products App */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #21b5fa;
-    margin: 20px;
+   font-family: Arial, sans-serif;
+    background-image:url(https://i.pinimg.com/1200x/30/ad/17/30ad177aaba1db47babec73132906df0.jpg);
+    background-size: contain;
+    background-repeat: repeat;
+    margin: 50px;
 }
 
 /* Centers the content and keeps it from touching the edges */
